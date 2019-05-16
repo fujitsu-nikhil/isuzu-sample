@@ -1,0 +1,57 @@
+{
+    "name": "Vehicle",
+    "fields": [
+        {
+            "fieldName": "vehicleIdNumber",
+            "javadoc": "The firstname attribute.",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique",
+                "required"
+            ]
+        },
+        {
+            "fieldName": "overallJudgment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "overallJudgmentAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modelYear",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "modelCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lotNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "estimatedProductionDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "updatedAt",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190516115250",
+    "javadoc": "The Employee entity.",
+    "entityTableName": "vehicle",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

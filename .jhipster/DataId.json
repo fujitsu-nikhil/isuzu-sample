@@ -1,0 +1,34 @@
+{
+    "name": "DataId",
+    "fields": [
+        {
+            "fieldName": "dataId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "dataName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedAt",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190516115255",
+    "entityTableName": "data_id",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

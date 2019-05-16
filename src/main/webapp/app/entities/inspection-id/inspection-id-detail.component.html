@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="inspectionId">
+            <h2><span>Inspection Id</span> {{inspectionId.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Inspection Id</span></dt>
+                <dd>
+                    <span>{{inspectionId.inspectionId}}</span>
+                </dd>
+                <dt><span>Inspection Flag</span></dt>
+                <dd>
+                    <span>{{inspectionId.inspectionFlag}}</span>
+                </dd>
+                <dt><span>Inspection Name</span></dt>
+                <dd>
+                    <span>{{inspectionId.inspectionName}}</span>
+                </dd>
+                <dt><span>Sort Number</span></dt>
+                <dd>
+                    <span>{{inspectionId.sortNumber}}</span>
+                </dd>
+                <dt><span>Updated At</span></dt>
+                <dd>
+                    <span>{{inspectionId.updatedAt}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/inspection-id', inspectionId.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

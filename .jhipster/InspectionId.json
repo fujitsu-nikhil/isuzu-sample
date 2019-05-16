@@ -1,0 +1,38 @@
+{
+    "name": "InspectionId",
+    "fields": [
+        {
+            "fieldName": "inspectionId",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "inspectionFlag",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inspectionName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sortNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedAt",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190516115253",
+    "entityTableName": "inspection_id",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -45,6 +45,12 @@ public class CacheConfiguration {
             createCache(cm, com.fujitsu.isuzu.domain.User.class.getName() + ".authorities");
             createCache(cm, com.fujitsu.isuzu.domain.PersistentToken.class.getName());
             createCache(cm, com.fujitsu.isuzu.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, com.fujitsu.isuzu.domain.Vehicle.class.getName());
+            createCache(cm, com.fujitsu.isuzu.domain.Inspection.class.getName());
+            createCache(cm, com.fujitsu.isuzu.domain.InspectionResult.class.getName());
+            createCache(cm, com.fujitsu.isuzu.domain.InspectionId.class.getName());
+            createCache(cm, com.fujitsu.isuzu.domain.Data.class.getName());
+            createCache(cm, com.fujitsu.isuzu.domain.DataId.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,60 @@
+<div>
+    <h2 id="page-heading">
+        <span>Data Ids</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-data-id" [routerLink]="['/data-id/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Data Id
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="dataIds">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Data Id</span></th>
+            <th><span>Data Name</span></th>
+            <th><span>Sort Number</span></th>
+            <th><span>Updated At</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let dataId of dataIds ;trackBy: trackId">
+                <td><a [routerLink]="['/data-id', dataId.id, 'view' ]">{{dataId.id}}</a></td>
+                <td>{{dataId.dataId}}</td>
+                <td>{{dataId.dataName}}</td>
+                <td>{{dataId.sortNumber}}</td>
+                <td>{{dataId.updatedAt | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/data-id', dataId.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/data-id', dataId.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'data-id', { outlets: { popup: dataId.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
