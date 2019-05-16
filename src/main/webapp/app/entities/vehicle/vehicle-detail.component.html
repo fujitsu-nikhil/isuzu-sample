@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="vehicle">
+            <h2><span>Vehicle</span> {{vehicle.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span ngbTooltip="The firstname attribute.">Vehicle Id Number</span></dt>
+                <dd>
+                    <span>{{vehicle.vehicleIdNumber}}</span>
+                </dd>
+                <dt><span>Overall Judgment</span></dt>
+                <dd>
+                    <span>{{vehicle.overallJudgment}}</span>
+                </dd>
+                <dt><span>Overall Judgment At</span></dt>
+                <dd>
+                    <span>{{vehicle.overallJudgmentAt}}</span>
+                </dd>
+                <dt><span>Model Year</span></dt>
+                <dd>
+                    <span>{{vehicle.modelYear}}</span>
+                </dd>
+                <dt><span>Model Code</span></dt>
+                <dd>
+                    <span>{{vehicle.modelCode}}</span>
+                </dd>
+                <dt><span>Lot Number</span></dt>
+                <dd>
+                    <span>{{vehicle.lotNumber}}</span>
+                </dd>
+                <dt><span>Unit Number</span></dt>
+                <dd>
+                    <span>{{vehicle.unitNumber}}</span>
+                </dd>
+                <dt><span>Estimated Production Date</span></dt>
+                <dd>
+                    <span>{{vehicle.estimatedProductionDate}}</span>
+                </dd>
+                <dt><span>Updated At</span></dt>
+                <dd>
+                    <span>{{vehicle.updatedAt}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vehicle', vehicle.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

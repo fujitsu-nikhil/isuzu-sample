@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span>Inspections</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-inspection" [routerLink]="['/inspection/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Inspection
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="inspections">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Model Year</span></th>
+            <th><span>Model Code</span></th>
+            <th><span>Lot Start</span></th>
+            <th><span>Unit Start</span></th>
+            <th><span>Lot End</span></th>
+            <th><span>Unit End</span></th>
+            <th><span>Estimated Production Date Start</span></th>
+            <th><span>Estimated Production Date End</span></th>
+            <th><span>Inspection Id</span></th>
+            <th><span>System Id</span></th>
+            <th><span>Pattern</span></th>
+            <th><span>Pattern Division Number</span></th>
+            <th><span>Pattern Division Number Total</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let inspection of inspections ;trackBy: trackId">
+                <td><a [routerLink]="['/inspection', inspection.id, 'view' ]">{{inspection.id}}</a></td>
+                <td>{{inspection.modelYear}}</td>
+                <td>{{inspection.modelCode}}</td>
+                <td>{{inspection.lotStart}}</td>
+                <td>{{inspection.unitStart}}</td>
+                <td>{{inspection.lotEnd}}</td>
+                <td>{{inspection.unitEnd}}</td>
+                <td>{{inspection.estimatedProductionDateStart | date:'mediumDate'}}</td>
+                <td>{{inspection.estimatedProductionDateEnd | date:'mediumDate'}}</td>
+                <td>{{inspection.inspectionId}}</td>
+                <td>{{inspection.systemId}}</td>
+                <td>{{inspection.pattern}}</td>
+                <td>{{inspection.patternDivisionNumber}}</td>
+                <td>{{inspection.patternDivisionNumberTotal}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/inspection', inspection.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/inspection', inspection.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'inspection', { outlets: { popup: inspection.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

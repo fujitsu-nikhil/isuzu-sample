@@ -1,0 +1,51 @@
+{
+    "name": "InspectionResult",
+    "fields": [
+        {
+            "fieldName": "vehicleIdNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inspectionId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "systemId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pattern1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "judgment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdAt",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "partsNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updatedAt",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190516115252",
+    "entityTableName": "inspection_result",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

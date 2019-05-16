@@ -1,0 +1,75 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="inspection">
+            <h2><span>Inspection</span> {{inspection.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Model Year</span></dt>
+                <dd>
+                    <span>{{inspection.modelYear}}</span>
+                </dd>
+                <dt><span>Model Code</span></dt>
+                <dd>
+                    <span>{{inspection.modelCode}}</span>
+                </dd>
+                <dt><span>Lot Start</span></dt>
+                <dd>
+                    <span>{{inspection.lotStart}}</span>
+                </dd>
+                <dt><span>Unit Start</span></dt>
+                <dd>
+                    <span>{{inspection.unitStart}}</span>
+                </dd>
+                <dt><span>Lot End</span></dt>
+                <dd>
+                    <span>{{inspection.lotEnd}}</span>
+                </dd>
+                <dt><span>Unit End</span></dt>
+                <dd>
+                    <span>{{inspection.unitEnd}}</span>
+                </dd>
+                <dt><span>Estimated Production Date Start</span></dt>
+                <dd>
+                    <span>{{inspection.estimatedProductionDateStart}}</span>
+                </dd>
+                <dt><span>Estimated Production Date End</span></dt>
+                <dd>
+                    <span>{{inspection.estimatedProductionDateEnd}}</span>
+                </dd>
+                <dt><span>Inspection Id</span></dt>
+                <dd>
+                    <span>{{inspection.inspectionId}}</span>
+                </dd>
+                <dt><span>System Id</span></dt>
+                <dd>
+                    <span>{{inspection.systemId}}</span>
+                </dd>
+                <dt><span>Pattern</span></dt>
+                <dd>
+                    <span>{{inspection.pattern}}</span>
+                </dd>
+                <dt><span>Pattern Division Number</span></dt>
+                <dd>
+                    <span>{{inspection.patternDivisionNumber}}</span>
+                </dd>
+                <dt><span>Pattern Division Number Total</span></dt>
+                <dd>
+                    <span>{{inspection.patternDivisionNumberTotal}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/inspection', inspection.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

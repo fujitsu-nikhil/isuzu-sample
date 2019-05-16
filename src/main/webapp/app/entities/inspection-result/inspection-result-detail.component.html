@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="inspectionResult">
+            <h2><span>Inspection Result</span> {{inspectionResult.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Vehicle Id Number</span></dt>
+                <dd>
+                    <span>{{inspectionResult.vehicleIdNumber}}</span>
+                </dd>
+                <dt><span>Inspection Id</span></dt>
+                <dd>
+                    <span>{{inspectionResult.inspectionId}}</span>
+                </dd>
+                <dt><span>System Id</span></dt>
+                <dd>
+                    <span>{{inspectionResult.systemId}}</span>
+                </dd>
+                <dt><span>Pattern 1</span></dt>
+                <dd>
+                    <span>{{inspectionResult.pattern1}}</span>
+                </dd>
+                <dt><span>Judgment</span></dt>
+                <dd>
+                    <span>{{inspectionResult.judgment}}</span>
+                </dd>
+                <dt><span>Created At</span></dt>
+                <dd>
+                    <span>{{inspectionResult.createdAt}}</span>
+                </dd>
+                <dt><span>Parts Number</span></dt>
+                <dd>
+                    <span>{{inspectionResult.partsNumber}}</span>
+                </dd>
+                <dt><span>Detail</span></dt>
+                <dd>
+                    <span>{{inspectionResult.detail}}</span>
+                </dd>
+                <dt><span>Updated At</span></dt>
+                <dd>
+                    <span>{{inspectionResult.updatedAt}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/inspection-result', inspectionResult.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-vehicle-heading">Create or edit a Vehicle</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!vehicle.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_vehicleIdNumber" ngbTooltip="The firstname attribute.">Vehicle Id Number</label>
+                    <input type="text" class="form-control" name="vehicleIdNumber" id="field_vehicleIdNumber"
+                           formControlName="vehicleIdNumber"/>
+                    <div *ngIf="editForm.get('vehicleIdNumber').invalid && (editForm.get('vehicleIdNumber').dirty || editForm.get('vehicleIdNumber').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('vehicleIdNumber').errors.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_overallJudgment">Overall Judgment</label>
+                    <input type="text" class="form-control" name="overallJudgment" id="field_overallJudgment"
+                           formControlName="overallJudgment"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_overallJudgmentAt">Overall Judgment At</label>
+                    <div class="d-flex">
+                        <input id="field_overallJudgmentAt" type="datetime-local" class="form-control" name="overallJudgmentAt" formControlName="overallJudgmentAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modelYear">Model Year</label>
+                    <div class="d-flex">
+                        <input id="field_modelYear" type="datetime-local" class="form-control" name="modelYear" formControlName="modelYear" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modelCode">Model Code</label>
+                    <input type="text" class="form-control" name="modelCode" id="field_modelCode"
+                           formControlName="modelCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lotNumber">Lot Number</label>
+                    <input type="text" class="form-control" name="lotNumber" id="field_lotNumber"
+                           formControlName="lotNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_unitNumber">Unit Number</label>
+                    <input type="text" class="form-control" name="unitNumber" id="field_unitNumber"
+                           formControlName="unitNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_estimatedProductionDate">Estimated Production Date</label>
+                    <div class="input-group">
+                        <input id="field_estimatedProductionDate" type="text" class="form-control" name="estimatedProductionDate" ngbDatepicker  #estimatedProductionDateDp="ngbDatepicker" formControlName="estimatedProductionDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="estimatedProductionDateDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updatedAt">Updated At</label>
+                    <div class="d-flex">
+                        <input id="field_updatedAt" type="datetime-local" class="form-control" name="updatedAt" formControlName="updatedAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

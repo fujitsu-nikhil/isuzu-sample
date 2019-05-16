@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-data-id-heading">Create or edit a Data Id</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!dataId.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dataId">Data Id</label>
+                    <input type="text" class="form-control" name="dataId" id="field_dataId"
+                           formControlName="dataId"/>
+                    <div *ngIf="editForm.get('dataId').invalid && (editForm.get('dataId').dirty || editForm.get('dataId').touched)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_dataName">Data Name</label>
+                    <input type="text" class="form-control" name="dataName" id="field_dataName"
+                           formControlName="dataName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sortNumber">Sort Number</label>
+                    <input type="text" class="form-control" name="sortNumber" id="field_sortNumber"
+                           formControlName="sortNumber"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_updatedAt">Updated At</label>
+                    <div class="d-flex">
+                        <input id="field_updatedAt" type="datetime-local" class="form-control" name="updatedAt" formControlName="updatedAt" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
