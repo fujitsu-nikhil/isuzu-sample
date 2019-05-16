@@ -1,0 +1,86 @@
+
+
+/**
+ * The Employee entity.
+ */
+entity Vehicle {
+	/**
+	* The firstname attribute.
+	*/
+	vehicleIdNumber String unique required,
+	overallJudgment String,
+	overallJudgmentAt Instant,
+	modelYear Instant,
+	modelCode String,
+	lotNumber String,
+	unitNumber String,
+    estimatedProductionDate LocalDate,
+    updatedAt Instant
+}
+
+entity Inspection {
+	modelYear String maxlength(3) required,
+    modelCode String maxlength(5) required,
+    lotStart String maxlength(3) required,
+    unitStart String maxlength(3) required,
+    lotEnd String maxlength(3) required,
+    unitEnd String maxlength(3) required,
+    estimatedProductionDateStart LocalDate required,
+    estimatedProductionDateEnd LocalDate required,
+    inspectionId String maxlength(15),
+    systemId String unique,
+    pattern String,
+    patternDivisionNumber String maxlength(1),
+    patternDivisionNumberTotal String maxlength(1)
+}
+entity InspectionResult {
+	vehicleIdNumber String,
+	inspectionId String,
+	systemId String,
+    pattern1 String,
+    judgment String,
+    createdAt Instant,
+    partsNumber String,
+    detail String,
+    updatedAt Instant
+}
+entity InspectionId {
+	inspectionId String unique,
+    inspectionFlag String,
+    inspectionName String,
+    sortNumber String,
+    updatedAt Instant
+}
+
+entity Data {
+	vehicleIdNumber String,
+    dataId String,
+    detail String,
+    createdAt Instant,
+    updatedAt Instant
+}
+
+entity DataId {
+    dataId String unique,
+    dataName String,
+    sortNumber String,
+    updatedAt Instant
+}
+
+entity User {
+    userId String,
+    userName String,
+    password String,
+    authorityLevel String,
+    updatedAt Instant
+}
+
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl //except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
